@@ -24,6 +24,7 @@ public class TestFiles {
 
         try {
             reader = new Scanner( input );
+            
             OutputToFile(fileName[1], input, reader);
         } catch ( FileNotFoundException e ) {
             System.out.println(
@@ -59,7 +60,7 @@ public class TestFiles {
 
         while( reader.hasNextDouble() ) {
             value = reader.nextDouble();
-            output.printf( "Value: %8.2f\n", value );
+            // output.printf( "Value: %8.2f\n", value );
             total += value;
         }
 
