@@ -1,5 +1,5 @@
 public class UniversityMember extends Person {
-    private String idNumber = 0;
+    private String idNumber = "";
 
     public UniversityMember(String name, int age, String idNumber) { 
         super(name, age); 
@@ -7,16 +7,21 @@ public class UniversityMember extends Person {
     }
 
     @Override
-    public boolean equals(Object objcet) {
+    public boolean equals(Object object) {
         if(this == object) return true;
         if(object == null) return false;
-        if(getClass() != objcet.getClass()) return false;
-        if(!super.equals(obj)) return false;
+        if(getClass() != object.getClass()) return false;
+        UniversityMember um = (UniversityMember) object;
         return idNumber.equals(um.idNumber);
      }
 
     @Override
-    public int hashCode() { return 0; }
+    public int hashCode() { 
+        int hash = 7;
+        hash = 31 * super.hashCode();
+        hash = 31 * idNumber.hashCode();
+        return hash;
+    }
 
     @Override
     public String toString() { 
@@ -24,6 +29,6 @@ public class UniversityMember extends Person {
         return umData;
     }
 
-    public void setIdNumber(int idNumber) { this.idNumber = idNumber; }
+    public void setIdNumber(String idNumber) { this.idNumber = idNumber; }
     public String getIdNumber() { return idNumber; }
 }
