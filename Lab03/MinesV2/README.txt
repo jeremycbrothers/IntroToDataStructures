@@ -1,0 +1,1 @@
+This version separates the user interface from the board representation.

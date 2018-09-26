@@ -1,0 +1,1 @@
+This is a skeleton to demonstrate decomposition and modular development.
