@@ -10,22 +10,30 @@ public class BoundingBox {
     }
 
     public double getWidth() { return width; }
-    public void setWidth(double width) { this.width = width; }
 
     public double getHeight() { return height; }
-    public void setHeight(double height) { this.height = height; }
 
     @Override
     public boolean equals(Object object) {
-        return false;
+        BoundingBox b = (BoundingBox)object;
+        return ( 
+            b.origin.getX() == origin.getX() &&
+            b.origin.getY() == origin.getY() &&
+            b.getWidth() == width &&
+            b.getHeight() == height
+        );
     }
     @Override
     public int hashCode() {
-        return 0;
+        int hash = 11;
+        // hash = 29 * hash + x + y;
+        return hash;
     }
 
     @Override
     public String toString() {
-        return "";
+        String originStr = "The origin is: " + origin.getX() + ", " + origin.getY() + "\n";
+        String sizeStr = "The width is: " + width + " \nThe hiehgt is: " + height + "\n";
+        return originStr + sizeStr;
     }
 }

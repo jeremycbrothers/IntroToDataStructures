@@ -12,16 +12,19 @@ public class Point {
     
     @Override
     public boolean equals(Object object) {
-        return false;
+        Point p = (Point)object;
+        return x == p.getX() && y == p.getY();
     }
 
     @Override
     public int hashCode() {
-        return 0;
+        int hash = 11;
+        // hash = 29 * hash + x + y;
+        return hash;
     }
 
     @Override
     public String toString() {
-        return "";
+        return "X: " + x + " Y: " + y;
     }
 }
