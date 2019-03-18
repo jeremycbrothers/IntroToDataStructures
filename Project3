@@ -1,0 +1,45 @@
+import java.util.Random;
+import java.util.Queue;
+
+enum CarWashOption {
+  BASIC(5,5.0),
+  STANDARD(6,6.0),
+  WASHNWAX(7,7.0);
+  
+  private static CarWashOption[] vals = values();
+  private static Random gen = new Random();
+  
+  private int time;
+  private double price;
+  
+  CarWashOption(int time, double price) {
+    this.time = time;
+    this.price = price;
+  }
+  
+  public static CarWashOption getRandomOption() {
+    return vals[(gen.nextInt(vals.length))];
+  }
+}
+
+public class Car {
+  private CarWashOption option;
+  private int timeRemaining;
+  
+  public Car(CarWashOption option) {
+    this.option = option;
+  }
+  
+  public calculateTimeRemaining() {}
+}
+
+public class CarWash{
+  private Queue<Car> carWashQueue;
+  
+  public CarWash(int availableBays) {}
+  
+  public void run(int iterations, double probability) {}
+  
+  public void printData() {
+  	System.out.println("printing...");
+  }
